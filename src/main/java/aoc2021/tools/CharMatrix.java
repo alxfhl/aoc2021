@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 @SuppressWarnings("SuspiciousNameCombination")
 @EqualsAndHashCode
@@ -179,5 +180,14 @@ public class CharMatrix {
                 chars[i] = replacement;
             }
         }
+    }
+
+    public Coord2D findFirst(Predicate<Character> filter) {
+        for (int i = 0; i < chars.length; i++) {
+            if (filter.test(chars[i])) {
+                return new Coord2D(i % width, i / width);
+            }
+        }
+        return null;
     }
 }
