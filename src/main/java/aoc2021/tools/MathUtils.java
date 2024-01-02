@@ -4,7 +4,9 @@ import java.math.BigInteger;
 
 public class MathUtils {
 
-    /** @return greatest common divisor */
+    /**
+     * @return greatest common divisor
+     */
     public static long gcd(long a, long b) {
         while (b != 0) {
             long t = b;
@@ -23,12 +25,18 @@ public class MathUtils {
         return a;
     }
 
-    /** @return least common multiple */
+    /**
+     * @return least common multiple
+     */
     public static long lcm(long a, long b) {
         return a / gcd(a, b) * b;
     }
 
     public static BigInteger lcm(BigInteger a, BigInteger b) {
         return a.divide(gcd(a, b)).multiply(b);
+    }
+
+    public static long triangular(long a) {
+        return a * (a + 1) / 2;
     }
 }
