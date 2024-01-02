@@ -17,7 +17,7 @@ public class Parse {
 
     public static List<Integer> getIntegers(String s) {
         List<Integer> result = new ArrayList<>();
-        for (String part : s.split("[^0-9]+")) {
+        for (String part : s.split("[^-0-9]+")) {
             if (!part.isBlank()) {
                 result.add(Integer.valueOf(part));
             }
